@@ -13,28 +13,30 @@ enum newEnum {
   up,
   down
 }
-let one:newEnum = newEnum.left;
-// console.log(one);            //数字枚举相当于双向绑定，数字相当于下标，即为反向映射
-// console.log(newEnum);
+let one:newEnum = newEnum.right;
+console.log(one)
+  //数字枚举相当于双向绑定，数字相当于下标，即为反向映射
   //字符串枚举，
 enum nums {
-  name1 = 'www',
-  name2 = 'eee',
-  name3 = 2,
+  name1,
+  name2,
+  name3
 }
+let nameewer:nums = nums.name3
+console.log(nameewer)
       //字符串枚举不能以值拿键，
-// console.log(nums.name1);    //www
-// console.log(nums['www']);   //undefined
-// console.log(nums[2]);       //name3、
+//     //www
+//    //undefined
+//        //name3、
 //异构枚举，枚举有多种数据类型
 
 
 
 // any类型,可以修改类型
 let val: any = '123';
-  // console.log(val);
+
 val = true;
-  // console.log(val);
+  //
 //unknown类型,
 // unknown => any   'ok'
 // unknown => 其他类型   'no'
@@ -48,8 +50,41 @@ val = true;
 //void类型，标识函数无返回值时为void
 
 function warnUser(): void {
-  console.log("This is my warning message");
+
 }
 warnUser();
 
 //never类型，判断类型时不明时可赋值为never型，never可赋值为任何类型
+enum color {red,green,blue="#3399FF"}
+let myColor:color = color.blue
+let newColor:color = color.green
+ //#3399FF 1
+
+
+/**
+ *class类
+*/// constructor 示例
+class PersonB {
+
+  constructor(public name:string){
+    this.name = name
+  }
+}
+class Teacher extends PersonB{
+  constructor(public age: number ) {
+    super('LinYY') // 初始化父类的 name
+  }
+}
+const teacher = new Teacher(18)
+
+
+enum Direction {
+  Up,
+  Down = 'str',
+  Left,
+  Right
+}
+let myTest:Direction = Direction.Down
+let myTest1:Direction = Direction.Left
+console.log(myTest)
+console.log(myTest1)
